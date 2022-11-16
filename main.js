@@ -1,3 +1,5 @@
+//NOW I SHOULD COUNT THE TABLES AND ADD THE NUMBER OF EACH OF THOSE IN THE ATTRIBUTE ID 
+
 
 const gamezone = document.querySelector('.game-zone');
 const gettables = () => {
@@ -11,6 +13,8 @@ const gettables = () => {
     } 
     console.log(`${nbreTables} tableaux`);
 }
+
+
 
 const attribApples = () => {
 
