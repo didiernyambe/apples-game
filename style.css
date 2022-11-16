@@ -3,6 +3,7 @@ body{
     padding: 0;
     box-sizing: border-box;
     background-color: rgb(78, 83, 131);
+    opacity: .3;
 }
 .container{
     margin: 0 auto;
