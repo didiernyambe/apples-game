@@ -3,7 +3,7 @@ body{
     padding: 0;
     box-sizing: border-box;
     background-color: rgb(78, 83, 131);
-    opacity: .3;
+    /* opacity: .3; */
 }
 .container{
     margin: 0 auto;
@@ -26,6 +26,7 @@ table{
     border-collapse: separate;
     width: 100%;
     height: 10%;
+    filter: contrast(1%);
 }
 
 /* td:first-child + td + td{
@@ -47,5 +48,26 @@ td:hover{
 }
 
 .score{
-    background-color: burlywood;
+    height: 20vh;
+    /* z-index: 1000; */
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2em;
+    background-color: rgba(222, 184, 135, 0.39);
+}
+
+noscript{
+    position: absolute;
+    color: #efefef;
+    background-color: #121212;
+    /* display: inline-block; */
+    width: 100vw;
+    height: 100vh;
+    text-align: center;
+    font-size: 1.5em;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    line-height: 100vh;
 }

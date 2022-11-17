@@ -1,4 +1,4 @@
-alert(' ---- HERE STARTS THE GAME;\n ---- TRY TO FIND ONLY RED APPLES')
+//alert(' ---- HERE STARTS THE GAME;\n ---- TRY TO FIND ONLY RED APPLES')
 
 
 const attribApples = () => {
@@ -18,22 +18,44 @@ const attribApples = () => {
     }
 }
 
+// hiding all the tables with the id greater than 1 to start the game
+const tables = document.querySelectorAll('table');
+for (const table of tables) {
+    if (parseInt(table.id) > 1){
+        table.setAttribute('hidden', 'hidden');
+    }
+}
+
 // event listener on the tables cells
 const tds = document.getElementsByTagName('td');
 for (const td of tds) {
     td.addEventListener('click', () => {
-        console.log(td.innerHTML);
+        
         if (td.innerHTML === "🍏") {
             alert("A green apple, YOU LOSE");
+        } else {
+            // Getting the id of the table which contains the cell we click one
+            // td>tr>tbody>table.id
+            const nextTableId = parseInt(td.parentElement.parentElement.parentElement.id) + 1;
+            if(nextTableId <= 10){
+                // atteindre le prochain tableau
+                let nextTable = document.getElementById(`${nextTableId}`);
+                console.log(parseInt(td.parentElement.parentElement.parentElement.id) + 1);
+                console.log(nextTable);
+                nextTable.removeAttribute('hidden');
+            }
+            
         }
+        // retablir la couleur sur le tableau qu'on vient de cliquer
+        td.parentElement.parentElement.parentElement.style.filter = "contrast(100%)";
     })
 }
 
 
 // fonction pour l'attribution de la pomme verte
-function greenApple(tableIndex, appleTable) {
-    for (let times = 0; times < tableIndex; times++) {
-        console.log(times);
+function greenApple(nbApples, appleTable) {
+    for (let times = 1; times <= nbApples; times++) {
+        // console.log(times);
         let caseAleatoire = Math.floor((Math.random() * 5));
         if (appleTable[caseAleatoire].innerHTML === "🍏") {
             times = times--;
