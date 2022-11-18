@@ -34,6 +34,7 @@ table{
 } */
 
 td{
+    background-color: #aeaeae;
     border: .5px solid #efefef;
     text-align: center;
     /* width: 20%; */
